@@ -5,6 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reis Consultoria e Tecnologia</title>
 <meta name="description" content="Soluções que unem estratégia e tecnologia para impulsionar seus resultados.">
+
+<!-- ══════ SEO ══════ -->
+<link rel="canonical" href="https://www.reisconsultoriatec.com/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Reis Consultoria e Tecnologia">
+<meta name="theme-color" content="#0F1729">
+
+<!-- ══════ FAVICON ══════ -->
+<link rel="icon" type="image/png" href="https://i.ibb.co/yF8yCczD/Design-sem-nome.png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/yF8yCczD/Design-sem-nome.png">
+
+<!-- ══════ OPEN GRAPH (WhatsApp, Facebook, LinkedIn) ══════ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Reis Consultoria e Tecnologia">
+<meta property="og:url" content="https://www.reisconsultoriatec.com/">
+<meta property="og:title" content="Reis Consultoria e Tecnologia">
+<meta property="og:description" content="Business Intelligence (Power BI), sistemas web sob medida, consultoria DBA Oracle e mapeamento de processos. Soluções que unem estratégia e tecnologia para impulsionar seus resultados.">
+<meta property="og:image" content="https://i.ibb.co/yF8yCczD/Design-sem-nome.png">
+<meta property="og:image:alt" content="Logo da Reis Consultoria e Tecnologia">
+
+<!-- ══════ TWITTER / X ══════ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reis Consultoria e Tecnologia">
+<meta name="twitter:description" content="Business Intelligence, sistemas web sob medida, consultoria DBA Oracle e mapeamento de processos.">
+<meta name="twitter:image" content="https://i.ibb.co/yF8yCczD/Design-sem-nome.png">
+
+<!-- ══════ DADOS ESTRUTURADOS (Google) ══════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Reis Consultoria e Tecnologia",
+  "url": "https://www.reisconsultoriatec.com/",
+  "logo": "https://i.ibb.co/yF8yCczD/Design-sem-nome.png",
+  "email": "reisconsultoriatec@gmail.com",
+  "description": "Business Intelligence (Power BI), desenvolvimento de software sob medida, consultoria DBA Oracle e mapeamento de processos.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-11-95865-9084",
+    "contactType": "customer service",
+    "availableLanguage": "Portuguese"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1524,6 +1569,508 @@ body {
   font-size: 20px;
   flex-shrink: 0;
 }
+
+/* ═══════════════════════════════════════
+   PAINEL DE ACESSIBILIDADE
+   ═══════════════════════════════════════ */
+.a11y-toggle {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 1500;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  border: 2px solid var(--teal-400);
+  color: var(--white);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: var(--transition);
+}
+.a11y-toggle:hover { background: var(--teal-600); transform: scale(1.06); }
+.a11y-toggle:focus-visible,
+.a11y-panel button:focus-visible,
+.a11y-panel select:focus-visible {
+  outline: 3px solid var(--amber-400);
+  outline-offset: 2px;
+}
+.a11y-toggle .a11y-dot {
+  position: absolute;
+  top: 2px; right: 2px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--amber-400);
+  border: 2px solid var(--navy-800);
+  display: none;
+}
+.a11y-toggle.has-active .a11y-dot { display: block; }
+
+.a11y-panel {
+  position: fixed;
+  left: 28px;
+  bottom: 96px;
+  z-index: 1500;
+  width: 330px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  background: var(--white);
+  color: var(--navy-800);
+  border-radius: 16px;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.35);
+  border: 1px solid var(--slate-200);
+  font-family: var(--font-body);
+  display: none;
+}
+.a11y-panel.open { display: block; animation: modalSlideIn 0.25s ease; }
+.a11y-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  color: var(--white);
+  border-bottom: 2px solid var(--teal-500);
+  border-radius: 16px 16px 0 0;
+}
+.a11y-head h2 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.a11y-head h2 i { color: var(--teal-400); font-size: 22px; }
+.a11y-close {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.a11y-body { padding: 16px 18px 18px; }
+.a11y-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal-600);
+  margin: 4px 0 10px;
+}
+.a11y-section-title:not(:first-child) { margin-top: 18px; }
+.a11y-font-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.a11y-font-row button { flex: 0 0 auto; }
+.a11y-font-level {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+.a11y-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.a11y-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 8px;
+  min-height: 72px;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  color: var(--navy-800);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.a11y-btn i { font-size: 22px; color: var(--teal-600); }
+.a11y-btn:hover { border-color: var(--teal-500); background: rgba(13,148,136,0.06); }
+.a11y-btn[aria-pressed="true"] {
+  background: var(--teal-600);
+  border-color: var(--teal-600);
+  color: var(--white);
+}
+.a11y-btn[aria-pressed="true"] i { color: var(--white); }
+.a11y-btn.small {
+  min-height: 0;
+  flex-direction: row;
+  padding: 8px 14px;
+  font-size: 15px;
+}
+.a11y-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.a11y-speech-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+.a11y-speech-row .a11y-btn { min-height: 64px; font-size: 12px; }
+.a11y-rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.a11y-rate select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--slate-300);
+  font-family: var(--font-body);
+  font-size: 13px;
+  background: var(--white);
+  color: var(--navy-800);
+}
+.a11y-status {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #475569;
+  min-height: 18px;
+}
+.a11y-reset {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--slate-300);
+  background: var(--white);
+  color: var(--navy-800);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.a11y-reset:hover { border-color: #EF4444; color: #EF4444; }
+
+/* Trecho sendo lido em voz alta */
+.a11y-reading {
+  outline: 3px solid var(--amber-400) !important;
+  outline-offset: 4px;
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border-radius: 6px;
+}
+/* Cursor no modo "clique para ouvir" */
+html.a11y-click-read body *:not(.a11y-panel):not(.a11y-panel *):not(.a11y-toggle):not(.a11y-toggle *) {
+  cursor: help !important;
+}
+
+@media (max-width: 768px) {
+  .a11y-toggle { bottom: 20px; left: 20px; width: 50px; height: 50px; font-size: 26px; }
+  .a11y-panel { left: 12px; right: 12px; top: 84px; bottom: 82px; width: auto; max-height: none; }
+}
+
+/* ── Opção: escala de cinza (aplicada no <html> para não quebrar elementos fixos) ── */
+html.a11y-gray { filter: grayscale(1); }
+
+/* ── Opção: destacar links ── */
+html.a11y-links a,
+html.a11y-links button:not(.a11y-btn):not(.a11y-close):not(.a11y-reset) {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  outline: 2px dashed var(--amber-500) !important;
+  outline-offset: 2px;
+}
+
+/* ── Opção: fonte mais legível ── */
+html.a11y-readable body *:not(i) {
+  font-family: Verdana, Tahoma, Arial, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.08em !important;
+}
+html.a11y-readable p,
+html.a11y-readable li,
+html.a11y-readable .service-desc,
+html.a11y-readable .portal-desc,
+html.a11y-readable .faq-answer-inner { line-height: 1.9 !important; }
+
+/* ── Opção: pausar animações ── */
+html.a11y-no-motion *,
+html.a11y-no-motion *::before,
+html.a11y-no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html.a11y-no-motion .reveal { opacity: 1 !important; transform: none !important; }
+html.a11y-no-motion .hero-particles { display: none !important; }
+/* O touro geométrico depende da animação para ser desenhado: mostra ele já pronto */
+html.a11y-no-motion .bull-line { stroke-dashoffset: 0 !important; }
+html.a11y-no-motion .bull-dot { opacity: 0.8 !important; }
+
+/* ── Opção: alto contraste ── */
+html.a11y-contrast body,
+html.a11y-contrast body *:not(i):not(img):not(svg):not(path):not(circle) {
+  background: #000 !important;
+  color: #FFF !important;
+  border-color: #FFF !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+html.a11y-contrast i { color: #FFD600 !important; }
+html.a11y-contrast a,
+html.a11y-contrast a *:not(i) { color: #FFD600 !important; }
+html.a11y-contrast button,
+html.a11y-contrast .btn-primary,
+html.a11y-contrast .btn-secondary,
+html.a11y-contrast .btn-whatsapp,
+html.a11y-contrast .nav-cta {
+  border: 2px solid #FFD600 !important;
+  color: #FFD600 !important;
+}
+html.a11y-contrast .a11y-btn[aria-pressed="true"] {
+  background: #FFD600 !important;
+  color: #000 !important;
+}
+html.a11y-contrast .a11y-btn[aria-pressed="true"] i { color: #000 !important; }
+html.a11y-contrast input,
+html.a11y-contrast select,
+html.a11y-contrast textarea { border: 2px solid #FFF !important; }
+html.a11y-contrast input::placeholder,
+html.a11y-contrast textarea::placeholder { color: #BBB !important; -webkit-text-fill-color: #BBB !important; }
+html.a11y-contrast .scroll-progress { background: #FFD600 !important; }
+html.a11y-contrast .wave-divider,
+html.a11y-contrast .hero-grid,
+html.a11y-contrast .hero-particles,
+html.a11y-contrast .bull-svg-container,
+html.a11y-contrast .logo-glow { display: none !important; }
+html.a11y-contrast .service-card,
+html.a11y-contrast .portal-card,
+html.a11y-contrast .faq-item,
+html.a11y-contrast .about-card,
+html.a11y-contrast .modal-container,
+html.a11y-contrast .a11y-panel { border: 1px solid #FFF !important; }
+html.a11y-contrast .a11y-reading { outline-color: #FFD600 !important; }
+
+/* ═══════════════════════════════════════
+   DEMONSTRAÇÃO GRATUITA NOS CARDS
+   ═══════════════════════════════════════ */
+.service-card.has-demo { display: flex; flex-direction: column; }
+.service-card.has-demo .service-desc { flex: 1; }
+.service-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.service-card.has-demo .service-link { margin-top: 0; text-decoration: none; }
+/* O link "Saiba mais" cobre o card inteiro, mantendo o card todo clicável */
+.service-card.has-demo .service-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.btn-demo {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #B45309;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-demo:hover {
+  background: var(--amber-500);
+  border-color: var(--amber-500);
+  color: var(--navy-900);
+  transform: translateY(-1px);
+}
+.btn-demo i { font-size: 16px; }
+
+/* ═══════════════════════════════════════
+   COMO TRABALHAMOS
+   ═══════════════════════════════════════ */
+#como-trabalhamos { background: var(--slate-50); }
+.process-steps {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  list-style: none;
+}
+/* Linha que liga as etapas */
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal-500), var(--teal-300), var(--teal-500));
+  opacity: 0.35;
+}
+.process-step {
+  position: relative;
+  text-align: center;
+  padding: 0 8px;
+}
+.process-number {
+  position: relative;
+  z-index: 1;
+  width: 72px; height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border: 3px solid var(--slate-50);
+  box-shadow: 0 0 0 2px var(--teal-500), 0 8px 24px rgba(15, 23, 41, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-400);
+  font-size: 30px;
+  transition: var(--transition);
+}
+.process-step:hover .process-number { transform: translateY(-4px) scale(1.05); }
+.process-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--teal-600);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.process-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy-800);
+  margin-bottom: 10px;
+}
+.process-desc {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.7;
+}
+.process-cta { text-align: center; margin-top: 52px; }
+
+@media (max-width: 1024px) {
+  .process-steps { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+  .process-steps::before { display: none; }
+}
+@media (max-width: 600px) {
+  .process-steps { grid-template-columns: 1fr; gap: 0; }
+  /* No celular vira uma linha do tempo vertical */
+  .process-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 18px;
+    text-align: left;
+    padding: 0 0 32px;
+  }
+  .process-step::before {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 64px;
+    bottom: 0;
+    width: 2px;
+    background: rgba(13, 148, 136, 0.3);
+  }
+  .process-step:last-child::before { display: none; }
+  .process-number { width: 64px; height: 64px; font-size: 26px; margin: 0; grid-row: span 3; }
+}
+
+/* ═══════════════════════════════════════
+   PREFERÊNCIAS DE COOKIES
+   ═══════════════════════════════════════ */
+.cookie-text strong { color: var(--white); }
+
+/* ═══════════════════════════════════════
+   DESTAQUE PULSANTE — PORTAL DE ACESSO
+   ═══════════════════════════════════════ */
+.nav-links a.nav-portal,
+.mobile-menu a.nav-portal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--teal-300);
+  font-weight: 600;
+  border: 1px solid rgba(20, 184, 166, 0.55);
+  background: rgba(13, 148, 136, 0.1);
+  animation: portalGlow 2.2s ease-in-out infinite;
+}
+.mobile-menu a.nav-portal { display: flex; }
+.nav-portal i { font-size: 16px; }
+.nav-links a.nav-portal:hover,
+.mobile-menu a.nav-portal:hover {
+  color: var(--white);
+  background: rgba(13, 148, 136, 0.25);
+  border-color: var(--teal-400);
+}
+/* Alinhamento: todos os itens do menu com a mesma altura e centralizados */
+.nav-links { align-items: center; }
+.nav-links li { display: flex; }
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+/* Anel que se expande e some, como um "radar" */
+.nav-portal::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 2px solid var(--teal-400);
+  opacity: 0;
+  pointer-events: none;
+  animation: portalRing 2.2s ease-out infinite;
+}
+@keyframes portalGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+  50%      { box-shadow: 0 0 18px 2px rgba(20, 184, 166, 0.45); }
+}
+@keyframes portalRing {
+  0%   { transform: scale(1);    opacity: 0.8; }
+  70%  { transform: scale(1.18, 1.45); opacity: 0; }
+  100% { opacity: 0; }
+}
 </style>
 </head>
 <body>
@@ -1545,7 +2092,7 @@ body {
       <li><a href="#inicio">Início</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#portal">Portal de Acesso</a></li>
+      <li><a href="#portal" class="nav-portal"><i class="ti ti-lock-open" aria-hidden="true"></i> Portal de Acesso</a></li>
       <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
     </ul>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
@@ -1559,7 +2106,7 @@ body {
   <a href="#inicio" onclick="toggleMenu()">Início</a>
   <a href="#servicos" onclick="toggleMenu()">Serviços</a>
   <a href="#sobre" onclick="toggleMenu()">Sobre Nós</a>
-  <a href="#portal" onclick="toggleMenu()">Portal de Acesso</a>
+  <a href="#portal" class="nav-portal" onclick="toggleMenu()"><i class="ti ti-lock-open" aria-hidden="true"></i> Portal de Acesso</a>
   <a href="#contato" onclick="toggleMenu()">Fale Conosco</a>
 </div>
 
@@ -1678,42 +2225,60 @@ body {
     <p class="section-desc">Do planejamento estratégico à implementação técnica, oferecemos um portfólio completo de serviços em tecnologia e gestão.</p>
   </div>
   <div class="services-grid">
-    <a class="service-card reveal" href="https://powerbi.reisconsultoriatec.com" target="_blank">
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-bi"><i class="ti ti-chart-bar"></i></div>
       <div class="service-title">Indicadores Gerenciais</div>
       <div class="service-desc">Dashboards em Power BI com KPIs estratégicos que transformam dados brutos em insights acionáveis para tomada de decisão.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
-    <a class="service-card reveal" href="https://www.appsheet.com/start/f47fac6b-75d1-4986-bfa0-c8298f946232" target="_blank">
+      <div class="service-actions">
+        <a class="service-link" href="https://powerbi.reisconsultoriatec.com" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20Indicadores%20Gerenciais%20%28Power%20BI%29" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de Indicadores Gerenciais (Power BI) pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-app"><i class="ti ti-device-mobile"></i></div>
       <div class="service-title">App Vendas</div>
       <div class="service-desc">Aplicativo completo para gestão de vendas, controle de pedidos e acompanhamento de metas em tempo real.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
-    <a class="service-card reveal" href="https://script.google.com/macros/s/AKfycbzmPnDxuvhJ2bIEY5Qp0g8crHYHacs4t_kZ_ZQIbOZSvtvttyQ9_0qb3Ea9zI9X-i2i/exec" target="_blank">
+      <div class="service-actions">
+        <a class="service-link" href="https://www.appsheet.com/start/f47fac6b-75d1-4986-bfa0-c8298f946232" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20App%20Vendas" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de App Vendas pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-plan"><i class="ti ti-table"></i></div>
       <div class="service-title">Planilhas Gerenciais</div>
       <div class="service-desc">Planilhas inteligentes e automatizadas para controle financeiro, operacional e gerencial com fórmulas avançadas.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
-    <a class="service-card reveal" href="https://condogest.reisconsultoriatec.com" target="_blank">
+      <div class="service-actions">
+        <a class="service-link" href="https://script.google.com/macros/s/AKfycbzmPnDxuvhJ2bIEY5Qp0g8crHYHacs4t_kZ_ZQIbOZSvtvttyQ9_0qb3Ea9zI9X-i2i/exec" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20Planilhas%20Gerenciais" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de Planilhas Gerenciais pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-condo"><i class="ti ti-building"></i></div>
       <div class="service-title">Gestão de Condomínio</div>
       <div class="service-desc">Sistema completo para administração condominial: cobrança, conciliação bancária, orçamentos, boletos e relatórios financeiros.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
- <a class="service-card reveal" href="https://odontosys.reisconsultoriatec.com" target="_blank">
+      <div class="service-actions">
+        <a class="service-link" href="https://condogest.reisconsultoriatec.com" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20Gest%C3%A3o%20de%20Condom%C3%ADnio%20%28CondoGest%29" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de Gestão de Condomínio (CondoGest) pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-odonto"><i class="ti ti-dental"></i></div>
       <div class="service-title">OdontoWorld</div>
-      <div class="service-desc">Sistema completa para administração para consultório odontologico: cobrança, conciliação bancária, orçamentos e relatórios financeiros.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
-      <a class="service-card reveal" href="https://financeiro.reisconsultoriatec.com" target="_blank">
+      <div class="service-desc">Sistema completo para administração de consultório odontológico: cobrança, conciliação bancária, orçamentos e relatórios financeiros.</div>
+      <div class="service-actions">
+        <a class="service-link" href="https://odontosys.reisconsultoriatec.com" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20OdontoWorld" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de OdontoWorld pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
+    <div class="service-card has-demo reveal">
       <div class="service-icon si-fin"><i class="ti ti-report-money"></i></div>
       <div class="service-title">Gestão Financeira</div>
-      <div class="service-desc">Já pensou em ter um sistema de gestão financeira completo e sem complicações! Controle sua vida financeira aonde estiver de forma simples e raápida.</div>
-      <div class="service-link">Saiba mais <i class="ti ti-arrow-right"></i></div>
-    </a>
+      <div class="service-desc">Já pensou em ter um sistema de gestão financeira completo e sem complicações! Controle sua vida financeira onde estiver de forma simples e rápida.</div>
+      <div class="service-actions">
+        <a class="service-link" href="https://financeiro.reisconsultoriatec.com" target="_blank" rel="noopener">Saiba mais <i class="ti ti-arrow-right"></i></a>
+        <a class="btn-demo" href="https://wa.me/5511958659084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20de%3A%20Gest%C3%A3o%20Financeira" target="_blank" rel="noopener" aria-label="Agendar demonstração gratuita de Gestão Financeira pelo WhatsApp"><i class="ti ti-calendar-event"></i> Demonstração grátis</a>
+      </div>
+    </div>
     <a class="service-card reveal" href="https://www.reisconsultoriatec.com" target="_blank">
       <div class="service-icon si-dev"><i class="ti ti-code"></i></div>
       <div class="service-title">Desenvolvimento de Software</div>
@@ -1750,7 +2315,7 @@ body {
         <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Banco de dados Firebase</div>
         <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Consultoria DBA Oracle</div>
         <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Gestão Condominial</div>
-        <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Gestão Odontologica</div>
+        <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Gestão Odontológica</div>
         <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Analisador e Conversor TXT/XLS - SPED Fiscal</div>
         <div class="about-feature"><i class="ti ti-circle-check-filled"></i> Mapeamento de Processos e Documentações para LGPD</div>
       </div>
@@ -1780,6 +2345,44 @@ body {
   </div>
 </section>
 
+<!-- ══════ COMO TRABALHAMOS ══════ -->
+<section class="section" id="como-trabalhamos">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Como Trabalhamos</div>
+    <h2 class="section-title">Do diagnóstico ao resultado, em 4 etapas</h2>
+    <p class="section-desc">Um processo claro e transparente, com você acompanhando cada fase do projeto.</p>
+  </div>
+  <ol class="process-steps">
+    <li class="process-step reveal">
+      <div class="process-number"><i class="ti ti-search" aria-hidden="true"></i></div>
+      <span class="process-tag">Etapa 01</span>
+      <h3 class="process-title">Diagnóstico</h3>
+      <p class="process-desc">Entendemos o cenário atual da sua empresa, seus processos e dados, identificando gargalos e oportunidades de melhoria.</p>
+    </li>
+    <li class="process-step reveal">
+      <div class="process-number"><i class="ti ti-file-description" aria-hidden="true"></i></div>
+      <span class="process-tag">Etapa 02</span>
+      <h3 class="process-title">Proposta</h3>
+      <p class="process-desc">Apresentamos um plano de ação personalizado, com escopo, cronograma e investimento definidos de forma clara.</p>
+    </li>
+    <li class="process-step reveal">
+      <div class="process-number"><i class="ti ti-rocket" aria-hidden="true"></i></div>
+      <span class="process-tag">Etapa 03</span>
+      <h3 class="process-title">Implantação</h3>
+      <p class="process-desc">Desenvolvemos e implantamos a solução com entregas acompanhadas, testes e treinamento da sua equipe.</p>
+    </li>
+    <li class="process-step reveal">
+      <div class="process-number"><i class="ti ti-headset" aria-hidden="true"></i></div>
+      <span class="process-tag">Etapa 04</span>
+      <h3 class="process-title">Suporte contínuo</h3>
+      <p class="process-desc">Seguimos ao seu lado após a entrega, com suporte dedicado, ajustes e evolução da solução conforme seu negócio cresce.</p>
+    </li>
+  </ol>
+  <div class="process-cta reveal">
+    <a href="#contato" class="btn-primary"><i class="ti ti-message-circle"></i> Quero começar pelo diagnóstico</a>
+  </div>
+</section>
+
 <!-- ══════ PORTAL ══════ -->
 <section class="section" id="portal">
   <div class="section-header reveal">
@@ -1801,7 +2404,7 @@ body {
    <a class="portal-card reveal" href="https://odontosys.reisconsultoriatec.com" target="_blank">
       <div class="portal-icon"><i class="ti ti-dental"></i></div>
       <div class="portal-title">OdontoWorld</div>
-      <div class="portal-desc">Sistema de gestão odontologica completo.</div>
+      <div class="portal-desc">Sistema de gestão odontológica completo.</div>
     </a>
   <a class="portal-card reveal" href="https://financeiro.reisconsultoriatec.com" target="_blank">
       <div class="portal-icon"><i class="ti ti-report-money"></i></div>
@@ -1931,8 +2534,8 @@ body {
       </div>
       <div class="form-success" id="formSuccess">
         <i class="ti ti-circle-check"></i>
-        <h3>Mensagem Enviada!</h3>
-        <p>Obrigado pelo contato. Retornaremos em breve.</p>
+        <h3>Conversa aberta no WhatsApp!</h3>
+        <p>Confira a mensagem e toque em enviar no WhatsApp para concluir. Obrigado pelo contato, retornaremos em breve.</p>
       </div>
     </div>
   </div>
@@ -1944,6 +2547,7 @@ body {
     <div class="footer-copy">© 2024 - Reis Consultoria e Tecnologia. Todos os direitos reservados.</div>
     <div class="footer-links">
       <a href="#" onclick="openPrivacyModal(); return false;">Termo de Privacidade</a>
+      <a href="#" onclick="openCookieBanner(); return false;">Preferências de cookies</a>
       <a href="#inicio">Voltar ao topo</a>
     </div>
   </div>
@@ -1964,7 +2568,7 @@ body {
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-inner">
     <div class="cookie-text">
-      <p><i class="ti ti-cookie" style="color: var(--amber-400); margin-right: 6px;"></i> Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <a onclick="closeCookieBanner(); openPrivacyModal();">Política de Privacidade</a>.</p>
+      <p><i class="ti ti-cookie" style="color: var(--amber-400); margin-right: 6px;"></i> Usamos <strong>cookies de análise</strong> (Google Analytics e Microsoft Clarity) para entender como o site é utilizado e melhorá-lo. Eles só são ativados se você aceitar. Saiba mais na nossa <a onclick="closeCookieBanner(); openPrivacyModal();">Política de Privacidade</a>.</p>
     </div>
     <div class="cookie-actions">
       <button class="cookie-accept" onclick="acceptCookies()">Aceitar</button>
@@ -1986,7 +2590,7 @@ body {
 
       <p>Por favor, leia esta Política de Privacidade e Proteção de Dados Pessoais cuidadosamente para entender nossas políticas e práticas sobre seus Dados Pessoais e como o tratamento destes dados é realizado.</p>
 
-      <p>Esta Política se aplica a indivíduos (pessoas naturais) que interagem com serviços REIS CONSULTORIA E TECNOLOGIA como consumidores ("Você"). Esta Política explica como seus Dados Pessoais são coletados, usados e divulgados pela REIS CONSULTORIA E TECNOLOGIA (referido nessa política como "REIS CONSULTORIA E TECNOLOGIA", "SOLUS", "Nós", "Conosco"). Ela também informa como Você pode acessar e atualizar seus Dados Pessoais e tomar certas decisões sobre como seus Dados Pessoais são utilizados.</p>
+      <p>Esta Política se aplica a indivíduos (pessoas naturais) que interagem com serviços REIS CONSULTORIA E TECNOLOGIA como consumidores ("Você"). Esta Política explica como seus Dados Pessoais são coletados, usados e divulgados pela REIS CONSULTORIA E TECNOLOGIA (referido nessa política como "REIS CONSULTORIA E TECNOLOGIA", "Nós", "Conosco"). Ela também informa como Você pode acessar e atualizar seus Dados Pessoais e tomar certas decisões sobre como seus Dados Pessoais são utilizados.</p>
 
       <p>Esta Política abrange nossas atividades de coleta de dados tanto online e offline, abrangendo os Dados Pessoais que Nós coletamos por meio de nossos vários canais, incluindo – mas não limitado a – Sites na web, Aplicativos, Redes Sociais de terceiros, Serviço de Atendimento ao Consumidor, Pontos de Venda, Pesquisas e Eventos. Por favor, note que Nós poderemos agregar Dados Pessoais combinados de diferentes fontes (por exemplo, nosso site e eventos offline). Como parte disso, Nós combinamos os Dados Pessoais que foram originalmente coletados por diferentes entidades da REIS CONSULTORIA E TECNOLOGIA ou parceiros da REIS CONSULTORIA E TECNOLOGIA. Você pode consultar a seção "Sobre seus direitos referentes a Dados Pessoais" para obter mais informações sobre como se opor a isso.</p>
 
@@ -2004,7 +2608,7 @@ body {
         <li><strong>Dados recebidos de terceiros:</strong> Incluindo, mas não limitado a redes sociais e sites de terceiros como, por exemplo, Facebook, Instagram, Linkedin, e similares, serviços de agregadores de dados, parceiros da REIS CONSULTORIA E TECNOLOGIA, fontes públicas e dados recebidos durante aquisição de outras empresas.</li>
       </ul>
 
-      <h3>Quais são seus de Dados Pessoais que coletamos e como estes são coletados</h3>
+      <h3>Quais são os seus Dados Pessoais que coletamos e como estes são coletados</h3>
       <p>Durante sua interação junto a REIS CONSULTORIA E TECNOLOGIA, usando uma das fontes de coleta previamente mencionadas, podemos coletar vários tipos de dados pessoais sobre Você, conforme exposto a seguir:</p>
       <ul>
         <li><strong>Informações de Contato:</strong> Inclui qualquer tipo de informação que possa facilitar nosso contato com Você, incluindo seu endereço físico de correspondência, números de telefone, endereços de correio eletrônico, sites e perfis em redes sociais.</li>
@@ -2015,12 +2619,12 @@ body {
         <li><strong>Pesquisas de mercado e feedback de consumidores:</strong> São informações que Você compartilha voluntariamente com a REIS CONSULTORIA E TECNOLOGIA sobre sua experiência de uso de nossos produtos e serviços.</li>
         <li><strong>Conteúdo gerado por consumidores:</strong> Incluindo qualquer conteúdo que Você cria e compartilha com a REIS CONSULTORIA E TECNOLOGIA em redes sociais de terceiros ou por meio de carregamento para um de nossos sites, aplicativos e demais serviços online e offline, incluindo o uso de aplicativos de rede social de terceiros, como o Facebook, Instagram, Linkedin e similares. Esses dados incluem textos, comentários, artigos, fotos, vídeos, histórias pessoais ou outros conteúdos e mídias semelhantes. Sempre que permitido, Nós coletamos e publicamos conteúdos gerados por consumidores em conexão com uma variedade de atividades, incluindo divulgação de produtos e serviços da REIS CONSULTORIA E TECNOLOGIA, concursos, premiações e outras promoções, recursos de comunidade do site, engajamento de consumidores e redes sociais de terceiros.</li>
         <li><strong>Informações de redes sociais de terceiros:</strong> Trata-se de quaisquer dados que Você compartilha publicamente em uma rede social de terceiros ou informações que fazem parte de seu perfil em uma rede social de terceiros (como o Facebook, Instagram, Linkedin e similares) e que Você permite que a rede social de terceiros compartilhe Conosco. Esses dados podem incluir detalhes como suas informações básicas de conta (nome, endereço de e-mail, gênero, data de nascimento, cidade atual, foto de perfil, ID de usuário, lista de amigos e informações similares.) e quaisquer outras informações ou atividades adicionais que Você permita que a rede social de terceiros compartilhe conosco. Nós recebemos suas informações de perfil de rede social de terceiros (ou partes delas) sempre que Você baixa um item ou interage com um aplicativo ou serviço da web da REIS CONSULTORIA E TECNOLOGIA em uma rede social de terceiros, sempre que Você utiliza um recurso de rede social que é integrado a um site do REIS CONSULTORIA E TECNOLOGIA ou sempre que Você interage Conosco por meio de uma rede social de terceiros. Para saber mais sobre como suas informações de uma rede social de terceiros são obtidas pela REIS CONSULTORIA E TECNOLOGIA ou para optar por não compartilhar essas informações de rede social, visite o site da rede social de terceiros específica.</li>
-        <li><strong>Informações financeiras e de pagamento:</strong> Quaisquer dados que a REIS CONSULTORIA E TECNOLOGIA necessita para atender a um pedido, ou que Você usa para fazer uma compra, como os dados de seu cartão de débito ou crédito (nome do titular do cartão, número do cartão, data de validade e etc.) ou outras formas de pagamento utilizadas. A REIS CONSULTORIA E TECNOLOGIA ou nossos prestadores de serviço de processamento de pagamentos manuseia suas informações financeiras e de pagamento em conformidade com as leis, normas e os padrões de segurança aplicáveis, como o PCI DSS ("Payment Card Industry Secutiry Standards Council").</li>
+        <li><strong>Informações financeiras e de pagamento:</strong> Quaisquer dados que a REIS CONSULTORIA E TECNOLOGIA necessita para atender a um pedido, ou que Você usa para fazer uma compra, como os dados de seu cartão de débito ou crédito (nome do titular do cartão, número do cartão, data de validade e etc.) ou outras formas de pagamento utilizadas. A REIS CONSULTORIA E TECNOLOGIA ou nossos prestadores de serviço de processamento de pagamentos manuseia suas informações financeiras e de pagamento em conformidade com as leis, normas e os padrões de segurança aplicáveis, como o PCI DSS ("Payment Card Industry Security Standards Council").</li>
         <li><strong>Contatos com nosso Serviço de Atendimento ao Consumidor e Central de Vendas:</strong> Suas interações com nossos Serviço de Atendimento ao Consumidor e Central de Vendas podem ser gravadas ou ouvidas, de acordo com as leis aplicáveis, para necessidades operacionais da REIS CONSULTORIA E TECNOLOGIA. Detalhes de informações financeiras e de pagamentos não são gravados. Quando exigido por lei, Você será informado sobre tal gravação ainda no início de sua chamada.</li>
-        <li><strong>Dados Pessoais Sensíveis:</strong> A REIS CONSULTORIA E TECNOLOGIA não lida normalmente com Dados Pessoais considerados sensíveis de acordo com a legislação vigente, dessa forma não temos a intenção de coletar ou processor dados pessoais sensíveis no curso normal de suas interações com nossos produtos ou serviços. Quando houver legitimo interesse ou for necessário processar seus dados pessoais sensíveis, por qualquer motivo, nós obteremos seu prévio, expresso e formal consentimento para qualquer processamento que for voluntário (por exemplo, para finalidades de marketing). Se processarmos seus dados pessoais sensíveis para outras finalidades, Nós nos apoiamos nas seguintes bases legais: (i) detecção e prevenção de crime; e (ii) cumprimento da lei aplicável.</li>
+        <li><strong>Dados Pessoais Sensíveis:</strong> A REIS CONSULTORIA E TECNOLOGIA não lida normalmente com Dados Pessoais considerados sensíveis de acordo com a legislação vigente, dessa forma não temos a intenção de coletar ou processar dados pessoais sensíveis no curso normal de suas interações com nossos produtos ou serviços. Quando houver legitimo interesse ou for necessário processar seus dados pessoais sensíveis, por qualquer motivo, nós obteremos seu prévio, expresso e formal consentimento para qualquer processamento que for voluntário (por exemplo, para finalidades de marketing). Se processarmos seus dados pessoais sensíveis para outras finalidades, Nós nos apoiamos nas seguintes bases legais: (i) detecção e prevenção de crime; e (ii) cumprimento da lei aplicável.</li>
       </ul>
 
-      <h3>Sobre de Dados Pessoais de Crianças e Adolescentes</h3>
+      <h3>Sobre Dados Pessoais de Crianças e Adolescentes</h3>
       <p>A REIS CONSULTORIA E TECNOLOGIA não solicita, coleta, processa, armazena ou compartilha, conscientemente, dados pessoais de crianças e adolescentes menores de idade. Se descobrirmos a ocorrência de qualquer tipo de manuseio dos referidos dados, forma não-intencional, removeremos os dados pessoais daquela criança ou adolescente de nossos registros rapidamente.</p>
       <p>Entretanto, a REIS CONSULTORIA E TECNOLOGIA pode coletar dados pessoais de crianças e adolescentes diretamente dos seus pais ou responsáveis legais, e com consentimento explícito, e de acordo com as regras da legislação vigente.</p>
 
@@ -2194,6 +2798,64 @@ body {
   </div>
 </div>
 
+
+<!-- ══════ ACESSIBILIDADE ══════ -->
+<button class="a11y-toggle" id="a11yToggle" aria-label="Abrir opções de acessibilidade" aria-expanded="false" aria-controls="a11yPanel" title="Acessibilidade">
+  <i class="ti ti-accessible" aria-hidden="true"></i>
+  <span class="a11y-dot" aria-hidden="true"></span>
+</button>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-head">
+    <h2 id="a11yTitle"><i class="ti ti-accessible" aria-hidden="true"></i> Acessibilidade</h2>
+    <button class="a11y-close" id="a11yClose" aria-label="Fechar opções de acessibilidade">
+      <i class="ti ti-x" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="a11y-body">
+
+    <div class="a11y-section-title">Tamanho do texto</div>
+    <div class="a11y-font-row">
+      <button class="a11y-btn small" id="a11yFontDown" aria-label="Diminuir texto"><i class="ti ti-text-decrease" aria-hidden="true"></i> A-</button>
+      <span class="a11y-font-level" id="a11yFontLevel" aria-live="polite">100%</span>
+      <button class="a11y-btn small" id="a11yFontUp" aria-label="Aumentar texto"><i class="ti ti-text-increase" aria-hidden="true"></i> A+</button>
+    </div>
+
+    <div class="a11y-section-title">Visual</div>
+    <div class="a11y-grid">
+      <button class="a11y-btn" data-a11y="contrast" aria-pressed="false"><i class="ti ti-contrast" aria-hidden="true"></i>Alto contraste</button>
+      <button class="a11y-btn" data-a11y="gray" aria-pressed="false"><i class="ti ti-contrast-2" aria-hidden="true"></i>Escala de cinza</button>
+      <button class="a11y-btn" data-a11y="links" aria-pressed="false"><i class="ti ti-link" aria-hidden="true"></i>Destacar links</button>
+      <button class="a11y-btn" data-a11y="readable" aria-pressed="false"><i class="ti ti-typography" aria-hidden="true"></i>Fonte legível</button>
+      <button class="a11y-btn" data-a11y="no-motion" aria-pressed="false"><i class="ti ti-player-pause" aria-hidden="true"></i>Pausar animações</button>
+    </div>
+
+    <div id="a11ySpeechBlock">
+      <div class="a11y-section-title">Leitura em voz alta</div>
+      <div class="a11y-grid">
+        <button class="a11y-btn" id="a11yReadPage"><i class="ti ti-volume" aria-hidden="true"></i>Ler a página</button>
+        <button class="a11y-btn" id="a11yClickRead" aria-pressed="false"><i class="ti ti-hand-click" aria-hidden="true"></i>Clique para ouvir</button>
+      </div>
+      <div class="a11y-speech-row">
+        <button class="a11y-btn" id="a11yPause" disabled><i class="ti ti-player-pause" aria-hidden="true"></i><span>Pausar</span></button>
+        <button class="a11y-btn" id="a11yStop" disabled><i class="ti ti-player-stop" aria-hidden="true"></i>Parar</button>
+        <button class="a11y-btn" id="a11ySelRead"><i class="ti ti-text-recognition" aria-hidden="true"></i>Ler seleção</button>
+      </div>
+      <div class="a11y-rate">
+        <label for="a11yRate">Velocidade da voz</label>
+        <select id="a11yRate">
+          <option value="0.8">Lenta</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.25">Rápida</option>
+          <option value="1.5">Muito rápida</option>
+        </select>
+      </div>
+      <div class="a11y-status" id="a11yStatus" aria-live="polite"></div>
+    </div>
+
+    <button class="a11y-reset" id="a11yReset"><i class="ti ti-refresh" aria-hidden="true"></i> Restaurar padrão</button>
+  </div>
+</div>
 <!-- ══════ MODAL CONSULTORIA DBA ORACLE ══════ -->
 <div class="modal-overlay" id="dbaModal">
   <div class="modal-container">
@@ -2403,37 +3065,110 @@ function submitForm() {
     return;
   }
 
-  let whatsMsg = `*Nova mensagem do site*%0A`;
-  whatsMsg += `*Nome:* ${name}%0A`;
-  if (company) whatsMsg += `*Empresa:* ${company}%0A`;
-  whatsMsg += `*E-mail:* ${email}%0A`;
-  if (phone) whatsMsg += `*Telefone:* ${phone}%0A`;
-  if (subject.value) whatsMsg += `*Assunto:* ${subjectText}%0A`;
-  if (message) whatsMsg += `*Mensagem:* ${message}`;
+  // Monta o texto normalmente e codifica tudo de uma vez,
+  // para que caracteres como & # ? não cortem a mensagem.
+  const linhas = ['*Nova mensagem do site*', `*Nome:* ${name}`];
+  if (company) linhas.push(`*Empresa:* ${company}`);
+  linhas.push(`*E-mail:* ${email}`);
+  if (phone) linhas.push(`*Telefone:* ${phone}`);
+  if (subject.value) linhas.push(`*Assunto:* ${subjectText}`);
+  if (message) linhas.push(`*Mensagem:* ${message}`);
 
-  window.open(`https://wa.me/5511958659084?text=${whatsMsg}`, '_blank');
+  const whatsUrl = `https://wa.me/5511958659084?text=${encodeURIComponent(linhas.join('\n'))}`;
+  const janela = window.open(whatsUrl, '_blank');
+
+  // Se o navegador bloqueou a nova aba, abre o WhatsApp na mesma aba
+  // em vez de mostrar uma confirmação falsa.
+  if (!janela) {
+    window.location.href = whatsUrl;
+    return;
+  }
 
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
 
-// ── Cookie Consent ──
+// ── Cookie Consent + Analytics ──
+// Preencha os IDs abaixo. Enquanto estiverem vazios, nada é carregado.
+const ANALYTICS_CONFIG = {
+  ga4: '',      // Google Analytics 4 — ex.: 'G-XXXXXXXXXX'
+  clarity: ''   // Microsoft Clarity — ex.: 'abcd123xyz'
+};
+let analyticsLoaded = false;
+
+function getConsent() {
+  try { return localStorage.getItem('cookieConsent'); } catch (e) { return null; }
+}
+function setConsent(value) {
+  try { localStorage.setItem('cookieConsent', value); } catch (e) {}
+}
+
+function loadAnalytics() {
+  if (analyticsLoaded) return;
+  analyticsLoaded = true;
+
+  // Google Analytics 4
+  if (ANALYTICS_CONFIG.ga4) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ANALYTICS_CONFIG.ga4);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ANALYTICS_CONFIG.ga4);
+  }
+
+  // Microsoft Clarity
+  if (ANALYTICS_CONFIG.clarity) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', ANALYTICS_CONFIG.clarity);
+  }
+}
+
+// Apaga os cookies de análise já gravados (usado quando o visitante recusa)
+function clearAnalyticsCookies() {
+  const host = location.hostname;
+  const domains = ['', host, '.' + host, '.' + host.replace(/^www\./, '')];
+  document.cookie.split(';').forEach(c => {
+    const name = c.split('=')[0].trim();
+    if (/^(_ga|_gid|_gat|_clck|_clsk|CLID|ANONCHK|MUID|SM)/.test(name)) {
+      domains.forEach(d => {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+      });
+    }
+  });
+}
+
 function acceptCookies() {
-  localStorage.setItem('cookieConsent', 'accepted');
+  setConsent('accepted');
   closeCookieBanner();
+  loadAnalytics();
 }
 function declineCookies() {
-  localStorage.setItem('cookieConsent', 'declined');
+  const wasLoaded = analyticsLoaded;
+  setConsent('declined');
+  clearAnalyticsCookies();
   closeCookieBanner();
+  // Se os scripts já estavam rodando, recarrega a página para desligá-los
+  if (wasLoaded) location.reload();
 }
 function closeCookieBanner() {
   document.getElementById('cookieBanner').style.display = 'none';
 }
-// Show banner if no choice made
-if (!localStorage.getItem('cookieConsent')) {
-  setTimeout(() => {
-    document.getElementById('cookieBanner').style.display = 'block';
-  }, 2000);
+function openCookieBanner() {
+  document.getElementById('cookieBanner').style.display = 'block';
+}
+
+// Na abertura da página: carrega se já aceitou; mostra o aviso se ainda não escolheu
+const savedConsent = getConsent();
+if (savedConsent === 'accepted') {
+  loadAnalytics();
+} else if (!savedConsent) {
+  setTimeout(openCookieBanner, 2000);
 }
 
 function toggleMenu() {
@@ -2530,6 +3265,265 @@ document.addEventListener('keydown', (e) => {
     if (dbaModal.classList.contains('open')) closeDbaModal();
   }
 });
+
+// ═══════════════════════════════════════
+// ACESSIBILIDADE
+// ═══════════════════════════════════════
+(function () {
+  const root = document.documentElement;
+  const toggle = document.getElementById('a11yToggle');
+  const panel = document.getElementById('a11yPanel');
+  const statusEl = document.getElementById('a11yStatus');
+  const STORE_KEY = 'a11yPrefs';
+  const FONT_STEPS = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
+  const TOGGLES = ['contrast', 'gray', 'links', 'readable', 'no-motion'];
+
+  // ── Preferências salvas (com proteção caso o navegador bloqueie o armazenamento) ──
+  let prefs = { font: 1, rate: 1 };
+  try { prefs = Object.assign(prefs, JSON.parse(localStorage.getItem(STORE_KEY) || '{}')); } catch (e) {}
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(prefs)); } catch (e) {}
+  }
+
+  // ── Abrir / fechar painel ──
+  function openPanel() {
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.getElementById('a11yClose').focus();
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', () => panel.classList.contains('open') ? closePanel() : openPanel());
+  document.getElementById('a11yClose').addEventListener('click', () => { closePanel(); toggle.focus(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('open')) { closePanel(); toggle.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    if (panel.classList.contains('open') && !panel.contains(e.target) && !toggle.contains(e.target) && !clickReadOn) closePanel();
+  });
+
+  // ── Aplicar preferências visuais ──
+  function applyAll() {
+    const idx = Math.min(Math.max(prefs.font, 0), FONT_STEPS.length - 1);
+    prefs.font = idx;
+    document.body.style.zoom = FONT_STEPS[idx] === 1 ? '' : FONT_STEPS[idx];
+    // O próprio painel e o botão não aumentam junto, para não saírem da tela
+    const undo = FONT_STEPS[idx] === 1 ? '' : String(1 / FONT_STEPS[idx]);
+    panel.style.zoom = undo;
+    toggle.style.zoom = undo;
+    document.getElementById('a11yFontLevel').textContent = Math.round(FONT_STEPS[idx] * 100) + '%';
+    document.getElementById('a11yFontDown').disabled = idx === 0;
+    document.getElementById('a11yFontUp').disabled = idx === FONT_STEPS.length - 1;
+
+    TOGGLES.forEach(name => {
+      const on = !!prefs[name];
+      root.classList.toggle('a11y-' + name, on);
+      const btn = panel.querySelector('[data-a11y="' + name + '"]');
+      if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    const anyActive = FONT_STEPS[idx] !== 1 || TOGGLES.some(n => prefs[n]) || clickReadOn;
+    toggle.classList.toggle('has-active', anyActive);
+  }
+
+  document.getElementById('a11yFontUp').addEventListener('click', () => { prefs.font++; applyAll(); save(); });
+  document.getElementById('a11yFontDown').addEventListener('click', () => { prefs.font--; applyAll(); save(); });
+  panel.querySelectorAll('[data-a11y]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.a11y;
+      prefs[name] = !prefs[name];
+      applyAll(); save();
+    });
+  });
+
+  // ═══════ LEITURA EM VOZ ALTA ═══════
+  const synth = window.speechSynthesis;
+  const speechBlock = document.getElementById('a11ySpeechBlock');
+  const pauseBtn = document.getElementById('a11yPause');
+  const stopBtn = document.getElementById('a11yStop');
+  const clickReadBtn = document.getElementById('a11yClickRead');
+  const rateSel = document.getElementById('a11yRate');
+  let clickReadOn = false;
+  let voice = null;
+  let highlighted = null;
+  let lastSelection = '';
+
+  if (!synth || typeof SpeechSynthesisUtterance === 'undefined') {
+    speechBlock.style.display = 'none';
+  } else {
+    rateSel.value = String(prefs.rate);
+    if (!rateSel.value) rateSel.value = '1';
+    rateSel.addEventListener('change', () => { prefs.rate = parseFloat(rateSel.value); save(); });
+
+    // Escolhe uma voz em português do Brasil, se o sistema tiver
+    function pickVoice() {
+      const voices = synth.getVoices();
+      voice = voices.find(v => v.lang === 'pt-BR') ||
+              voices.find(v => v.lang && v.lang.toLowerCase().startsWith('pt')) || null;
+    }
+    pickVoice();
+    if (typeof synth.onvoiceschanged !== 'undefined') synth.onvoiceschanged = pickVoice;
+
+    function setStatus(msg) { statusEl.textContent = msg; }
+    function highlight(el) {
+      if (highlighted) highlighted.classList.remove('a11y-reading');
+      highlighted = el || null;
+      if (highlighted) highlighted.classList.add('a11y-reading');
+    }
+    function updateControls(speaking) {
+      pauseBtn.disabled = !speaking;
+      stopBtn.disabled = !speaking;
+      pauseBtn.querySelector('span').textContent = synth.paused ? 'Continuar' : 'Pausar';
+      pauseBtn.querySelector('i').className = synth.paused ? 'ti ti-player-play' : 'ti ti-player-pause';
+    }
+
+    // Divide textos longos em trechos curtos (o Chrome corta falas muito longas)
+    function chunkText(text) {
+      const parts = text.replace(/\s+/g, ' ').trim().split(/(?<=[.!?;:])\s+/);
+      const chunks = [];
+      let cur = '';
+      parts.forEach(p => {
+        if ((cur + ' ' + p).length > 180 && cur) { chunks.push(cur); cur = p; }
+        else cur = cur ? cur + ' ' + p : p;
+      });
+      if (cur) chunks.push(cur);
+      return chunks;
+    }
+
+    // Recebe uma lista de { text, el } e lê em sequência
+    function speakBlocks(blocks) {
+      stopSpeech();
+      const queue = [];
+      blocks.forEach(b => chunkText(b.text).forEach(t => queue.push({ text: t, el: b.el })));
+      if (!queue.length) { setStatus('Não há texto para ler.'); return; }
+      // Pequena pausa após cancelar: alguns navegadores descartam a primeira fala
+      setTimeout(() => queue.forEach((item, i) => {
+        const u = new SpeechSynthesisUtterance(item.text);
+        u.lang = 'pt-BR';
+        if (voice) u.voice = voice;
+        u.rate = prefs.rate || 1;
+        u.onstart = () => {
+          if (item.el && item.el !== highlighted) {
+            highlight(item.el);
+            if (!clickReadOn) item.el.scrollIntoView({ behavior: prefs['no-motion'] ? 'auto' : 'smooth', block: 'center' });
+          }
+          updateControls(true);
+        };
+        if (i === queue.length - 1) {
+          u.onend = () => { highlight(null); updateControls(false); setStatus(''); };
+        }
+        u.onerror = () => { if (i === queue.length - 1) { highlight(null); updateControls(false); } };
+        synth.speak(u);
+      }), 80);
+      updateControls(true);
+      setStatus('Lendo… use Pausar ou Parar para controlar.');
+    }
+
+    function stopSpeech() {
+      synth.cancel();
+      highlight(null);
+      updateControls(false);
+    }
+
+    // ── Ler a página inteira, seção por seção ──
+    document.getElementById('a11yReadPage').addEventListener('click', () => {
+      // Garante que os contadores mostrem o valor final antes de ler
+      document.querySelectorAll('.counter').forEach(c => { c.textContent = c.dataset.target; });
+      const selectors = [
+        '#inicio .hero-content > div:first-child',
+        '#inicio .hero-slogan',
+        '.stats-bar',
+        '#servicos .section-header',
+        '#servicos .services-grid',
+        '#sobre .about-grid > div:first-child',
+        '#sobre .about-visual',
+        '#como-trabalhamos',
+        '#portal .section-header',
+        '#portal .portal-grid',
+        '#faq',
+        '#contato .contact-grid > div:first-child'
+      ];
+      const blocks = [];
+      selectors.forEach(sel => {
+        const el = document.querySelector(sel);
+        if (el && el.innerText.trim()) blocks.push({ text: el.innerText, el });
+      });
+      speakBlocks(blocks);
+    });
+
+    // ── Pausar / continuar / parar ──
+    pauseBtn.addEventListener('click', () => {
+      if (synth.paused) { synth.resume(); setStatus('Lendo…'); }
+      else { synth.pause(); setStatus('Leitura pausada.'); }
+      setTimeout(() => updateControls(true), 50);
+    });
+    stopBtn.addEventListener('click', () => { stopSpeech(); setStatus('Leitura interrompida.'); });
+
+    // ── Ler o texto selecionado ──
+    document.addEventListener('selectionchange', () => {
+      const sel = window.getSelection();
+      const txt = sel ? sel.toString().trim() : '';
+      if (txt && !(sel.anchorNode && panel.contains(sel.anchorNode))) lastSelection = txt;
+    });
+    document.getElementById('a11ySelRead').addEventListener('click', () => {
+      const current = (window.getSelection() || '').toString().trim();
+      const txt = current || lastSelection;
+      if (!txt) { setStatus('Selecione um trecho do site com o mouse e clique em "Ler seleção".'); return; }
+      speakBlocks([{ text: txt, el: null }]);
+    });
+
+    // ── Modo "clique para ouvir" ──
+    const READABLE = 'h1, h2, h3, p, li, label, .service-card, .portal-card, .stat-item, .about-card, ' +
+                     '.about-feature, .cta-info-item, .faq-question, .faq-answer-inner, .hero-badge, ' +
+                     '.hero-slogan-badge, .processos-feature, .footer-copy, a, button';
+    function onReadClick(e) {
+      if (panel.contains(e.target) || toggle.contains(e.target)) return;
+      const el = e.target.closest(READABLE) || e.target;
+      // Links não abrem enquanto o modo estiver ativo; apenas são lidos
+      if (el.closest('a')) { e.preventDefault(); e.stopPropagation(); }
+      const selTxt = (window.getSelection() || '').toString().trim();
+      const text = selTxt || el.innerText || el.getAttribute('aria-label') || '';
+      if (text.trim()) speakBlocks([{ text, el: selTxt ? null : el }]);
+    }
+    function setClickRead(on) {
+      clickReadOn = on;
+      clickReadBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      root.classList.toggle('a11y-click-read', on);
+      if (on) {
+        document.addEventListener('click', onReadClick, true);
+        setStatus('Clique em qualquer texto para ouvir. Enquanto este modo estiver ativo, os links apenas são lidos, não abrem.');
+      } else {
+        document.removeEventListener('click', onReadClick, true);
+        stopSpeech();
+        setStatus('');
+      }
+      applyAll();
+    }
+    clickReadBtn.addEventListener('click', () => setClickRead(!clickReadOn));
+
+    // ── Restaurar padrão ──
+    document.getElementById('a11yReset').addEventListener('click', () => {
+      if (clickReadOn) setClickRead(false);
+      stopSpeech();
+      prefs = { font: 1, rate: 1 };
+      rateSel.value = '1';
+      applyAll(); save();
+      setStatus('Configurações restauradas.');
+    });
+  }
+
+  // Sem suporte a voz: o botão Restaurar ainda precisa funcionar
+  if (!synth || typeof SpeechSynthesisUtterance === 'undefined') {
+    document.getElementById('a11yReset').addEventListener('click', () => {
+      prefs = { font: 1, rate: 1 };
+      applyAll(); save();
+    });
+  }
+
+  applyAll();
+})();
 </script>
 
 </body>
